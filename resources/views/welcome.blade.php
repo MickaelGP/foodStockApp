@@ -1,10 +1,10 @@
 @extends('layouts.guest')
 
 @section('content')
-    <section id="sectionPresentation" class="bg-secondary">
+    <section id="sectionPresentation" class="">
         <div class="container text-center">
             <div class="pt-5">
-                <h1>Titre de presentation</h1>
+                <h1>About us</h1>
             </div>
             <div>
                 <p>
@@ -14,7 +14,7 @@
                 </p>
             </div>
             <div class="pb-3">
-                <a href="#" class="btn bg-black text-white">S'inscrire</a>
+                <a href="{{route('register')}}" class="btn bg-black text-white">Register</a>
             </div>
         </div>
     </section>
@@ -29,7 +29,7 @@
                         <div class="col-lg-6 order-1 order-lg-2">
                            <div>
                                <div class="mt-5">
-                                   <h1>Titre description</h1>
+                                   <h1>The concept</h1>
                                </div>
                                <div>
                                    <p>
@@ -40,10 +40,10 @@
                                    </p>
                                </div>
                                <div class="mb-2">
-                                   <a href="#" class="btn bg-white text-black">Commencez</a>
+                                   <a href="{{route('register')}}" class="btn bg-white text-black">Start</a>
                                </div>
                                <div>
-                                   <a href="#" class="text-white">Vous avez déja un compte ? Connectez-vous</a>
+                                   <a href="{{route('login')}}" class="text-white">Already have an account ? Log in</a>
                                </div>
                            </div>
                         </div>
@@ -54,7 +54,7 @@
                         <div class="col-lg-6 order-1 order-lg-1">
                             <div class="">
                                 <div class="mt-5">
-                                    <h1>Titre description</h1>
+                                    <h1>The concept</h1>
                                 </div>
                                 <div>
                                     <p>
@@ -65,10 +65,10 @@
                                     </p>
                                 </div>
                                 <div class="mb-2">
-                                    <a href="#" class="btn bg-white text-black">Commencez</a>
+                                    <a href="{{route('register')}}" class="btn bg-white text-black">Start</a>
                                 </div>
                                 <div>
-                                    <a href="#" class="text-white">Vous avez déja un compte ? Connectez-vous</a>
+                                    <a href="{{route('login')}}" class="text-white">Already have an account ? Log in</a>
                                 </div>
                             </div>
                         </div>
@@ -80,14 +80,14 @@
             </div>
         </div>
     </section>
-    <section id="sectionContact" class="bg-secondary">
-        <div class="container">
+    <section id="sectionContact" class="">
+        <div class="container mb-5">
             <div class="container w-50">
-                <div class="text-center">
-                    <h1>Nous Contacter</h1>
+                <div class="text-center pt-3">
+                    <h1>Contact us</h1>
                 </div>
                 <div>
-                    <form>
+                    <form class="pb-5 mt-3">
                         <div class="mb-3">
                             <input type="text" class="form-control" id="name" name="name" required placeholder="Name">
                         </div>
@@ -101,7 +101,7 @@
                             <textarea class="form-control" placeholder="Leave your message here" name="description" id="description"></textarea>
                             <label for="floatingTextarea">Description</label>
                         </div>
-                        <div class="text-center pb-3">
+                        <div class="text-center pb-5">
                             <button type="submit" class="btn bg-black shadow  text-white">Submit</button>
                         </div>
                     </form>

@@ -1,0 +1,18 @@
+html{
+position: relative;
+    min-height: 100%;
+}
+
+footer{
+    padding: 15px;
+position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+#sectionPresentation, #sectionContact{
+    background-color:#EDEEEF;
+}
+#sectionLogin, #sectionRegister{
+    height: 700px;
+    background-color:#EDEEEF;
+}

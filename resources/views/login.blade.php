@@ -1,15 +1,16 @@
 @extends('layouts.guest')
 @section('content')
-    <section class="bg-secondary text-white">
-        <div class="container">
-            <div class="container w-50">
-                <div class="text-center">
+    <section class="text-black" id="sectionLogin">
+        <div class="container pt-5">
+            <div class="container w-50 mt-5">
+                <div class="text-center mb-5">
                     <h1>Login</h1>
                 </div>
                 <div>
-                    <form>
+                    <form action="{{route('login')}}" method="POST">
+                        @csrf
                         <div class="mb-3">
-                            <input type="email" class="form-control" id="email" name="username" required placeholder="Email">
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Email">
                         </div>
                         <div class="mb-3">
                             <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
