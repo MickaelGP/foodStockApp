@@ -17,4 +17,6 @@ Route::controller(AuthController::class)->group(function () {
 });
 Route::controller(ProfileController::class)->prefix('/profile')->group(function () {
     route::get('/', 'index')->name('dashboard')->middleware('auth');
+    route::get('/{user}/edit', 'editProfile')->name('edit.profile')->middleware('auth');
+
 });
