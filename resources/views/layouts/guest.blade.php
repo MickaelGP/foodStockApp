@@ -23,19 +23,19 @@
                     @guest
                     <ul class="navbar-nav ms-auto ">
                         <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="/#sectionPresentation">Qui nous sommes</a>
+                            <a class="nav-link text-white" aria-current="page" href="/#sectionPresentation">About us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white " href="/#sectionConcept">Le concept</a>
+                            <a class="nav-link text-white " href="/#sectionConcept">The concept</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="/#sectionContact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{route('register')}}">Inscription</a>
+                            <a class="nav-link text-white" href="{{route('register')}}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{route('login')}}">Connexion</a>
+                            <a class="nav-link text-white" href="{{route('login')}}">Login</a>
                         </li>
                     </ul>
                     @endguest
