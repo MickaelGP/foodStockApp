@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Profile;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use App\Rules\CurrentPasswordRule;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 
@@ -35,11 +37,10 @@ class ProfileController extends Controller
     {
 
         $data = request()->validate([
-            'current_password' => ['required',new CurrentPasswordRule], // Vérifie le mot de passe actuel
-            'new_password' => ['required', 'min:8', 'confirmed'], // Valide le nouveau mot de passe
+            'current_password' => ['required',new CurrentPasswordRule],
+            'new_password' => ['required', 'min:8', 'confirmed'],
         ]);
 
-        // Mettez à jour le mot de passe avec le nouveau
         $user->password = Hash::make($data['new_password']);
         $user->save();
 
@@ -47,7 +48,7 @@ class ProfileController extends Controller
     }
     public function destroy(Request $request): RedirectResponse
     {
-        $request->validateWithBag('userDeletion', [
+        $request->validate([
             'password' => ['required', 'current_password'],
         ]);
 
@@ -60,6 +61,6 @@ class ProfileController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return Redirect::to('/');
+        return redirect()->route('welcome')->with('success', 'Your account has been deleted.');
     }
 }

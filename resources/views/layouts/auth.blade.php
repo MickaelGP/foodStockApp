@@ -36,17 +36,15 @@
     </nav>
 </header>
 @if (session('success'))
-    <div class="container  alert alert-success text-center" id="alertSuccess">
+    <div class="container  alert alert-success text-center w-50 mt-5" id="alertSuccess">
         {{ session('success') }}
     </div>
 @endif
 @if ($errors->any())
-    <div class="container  alert alert-danger text-center" id="alertDanger">
-        <ul class="my-0">
+    <div class="container  alert alert-danger text-center w-50 mt-5" id="alertDanger">
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <p>{{ $error }}</p>
             @endforeach
-        </ul>
     </div>
 @endif
 
