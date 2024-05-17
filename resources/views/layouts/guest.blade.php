@@ -75,10 +75,8 @@
         <h3>Food Stock</h3>
     </div>
     <div class="text-center">
-
-                <a href="{{route('login')}}" >Connexion</a>
-
-                <a href="{{route('register')}}" >Inscription</a>
+                <a href="{{route('login')}}" class="text-white" >Connexion</a>
+                <a href="{{route('register')}}" class="text-white" >Inscription</a>
     </div>
 </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

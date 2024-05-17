@@ -12,11 +12,12 @@ Route::controller(HomeController::class)->prefix('/')->group(function () {
 });
 Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'login')->name('login');
-    route::get('/logout', 'logout')->name('logout');
+    Route::get('/logout', 'logout')->name('logout');
     Route::post('/register', 'register')->name('register');
 });
 Route::controller(ProfileController::class)->prefix('/profile')->group(function () {
-    route::get('/', 'index')->name('dashboard')->middleware('auth');
-    route::get('/{user}/edit', 'editProfile')->name('edit.profile')->middleware('auth');
-
+    Route::get('/', 'index')->name('dashboard')->middleware('auth');
+    Route::get('/{user}/edit', 'editProfile')->name('edit.profile')->middleware('auth');
+    Route::patch('/{user}/update-password', 'updatePassword')->name('update.password')->middleware('auth');
+    Route::patch('/{user}/update-profile', 'updateProfile')->name('update.profile')->middleware('auth');
 });

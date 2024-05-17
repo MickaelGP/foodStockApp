@@ -9,7 +9,7 @@
         <div class="container w-50 pt-5 " >
             <div class="card shadow">
                 <div class="card-body">
-                    <form method="POST" action="#">
+                    <form method="POST" action="{{ route('update.profile', $user) }}">
                         @csrf
                         @method('PATCH')
                         <div class="row mb-3">
@@ -55,7 +55,7 @@
         <div class="container w-50 pt-5">
             <div class="card shadow">
                 <div class="card-body">
-                    <form method="POST" action="#">
+                    <form method="POST" action="{{ route('update.password', $user) }}">
                         @csrf
                         @method('PATCH')
                         <div class="row mb-3">
