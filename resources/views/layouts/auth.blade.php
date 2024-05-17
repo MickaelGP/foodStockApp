@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/back.css">
     <title>@yield('title', 'Food Stock App')</title>
 
     <!-- Fonts -->
@@ -25,6 +25,9 @@
                         <a class="nav-link text-white" href="{{route('dashboard')}}">Dashboard</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-white" href="{{route('edit.profile', auth()->user())}}">Profile</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="{{route('logout')}}">Logout</a>
                     </li>
                 </ul>
@@ -33,17 +36,15 @@
     </nav>
 </header>
 @if (session('success'))
-    <div class="container  alert alert-success text-center" id="alertSuccess">
+    <div class="container  alert alert-success text-center w-50 mt-5" id="alertSuccess">
         {{ session('success') }}
     </div>
 @endif
 @if ($errors->any())
-    <div class="container  alert alert-danger text-center" id="alertDanger">
-        <ul class="my-0">
+    <div class="container  alert alert-danger text-center w-50 mt-5" id="alertDanger">
             @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
+                <p>{{ $error }}</p>
             @endforeach
-        </ul>
     </div>
 @endif
 

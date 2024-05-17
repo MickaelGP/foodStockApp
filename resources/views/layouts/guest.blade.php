@@ -23,19 +23,19 @@
                     @guest
                     <ul class="navbar-nav ms-auto ">
                         <li class="nav-item">
-                            <a class="nav-link text-white" aria-current="page" href="/#sectionPresentation">Qui nous sommes</a>
+                            <a class="nav-link text-white" aria-current="page" href="/#sectionPresentation">About us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white " href="/#sectionConcept">Le concept</a>
+                            <a class="nav-link text-white " href="/#sectionConcept">The concept</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="/#sectionContact">Contact</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{route('register')}}">Inscription</a>
+                            <a class="nav-link text-white" href="{{route('register')}}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{{route('login')}}">Connexion</a>
+                            <a class="nav-link text-white" href="{{route('login')}}">Login</a>
                         </li>
                     </ul>
                     @endguest
@@ -75,10 +75,8 @@
         <h3>Food Stock</h3>
     </div>
     <div class="text-center">
-
-                <a href="{{route('login')}}" >Connexion</a>
-
-                <a href="{{route('register')}}" >Inscription</a>
+                <a href="{{route('login')}}" class="text-white" >Connexion</a>
+                <a href="{{route('register')}}" class="text-white" >Inscription</a>
     </div>
 </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
