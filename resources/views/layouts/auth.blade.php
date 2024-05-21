@@ -25,6 +25,9 @@
                         <a class="nav-link text-white" href="{{route('dashboard')}}">Dashboard</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link text-white" href="{{route('stock.index')}}">Stock</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link text-white" href="{{route('edit.profile', auth()->user())}}">Profile</a>
                     </li>
                     <li class="nav-item">
@@ -40,6 +43,11 @@
         {{ session('success') }}
     </div>
 @endif
+@if (session('error'))
+    <div class="container  alert alert-warning text-center w-50 mt-5" >
+        {{ session('error') }}
+    </div>
+@endif
 @if ($errors->any())
     <div class="container  alert alert-danger text-center w-50 mt-5" id="alertDanger">
             @foreach ($errors->all() as $error)
@@ -49,7 +57,7 @@
 @endif
 
 @yield('content')
-
+@stack('scripts')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

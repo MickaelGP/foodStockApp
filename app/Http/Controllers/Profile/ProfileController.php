@@ -15,11 +15,11 @@ class ProfileController extends Controller
 {
     public function index()
     {
-        return view('profile.dashboard');
+        return view('auth.dashboard');
     }
     public function editProfile(User $user)
     {
-        return view('profile.edit', compact('user'));
+        return view('auth.profile.edit', compact('user'));
     }
     public function updateProfile(User $user)
     {

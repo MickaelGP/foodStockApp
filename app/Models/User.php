@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use MongoDB\Laravel\Eloquent\HybridRelations;
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasUlids;
+    use HasFactory, Notifiable, HasUlids, HybridRelations;
+
+    protected $connection = 'sqlite';
 
     /**
      * The attributes that are mass assignable.
@@ -45,4 +48,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function stocks(): HasMany
+    {
+        return $this->hasMany(Stock::class);
+    }
+
 }

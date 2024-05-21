@@ -3,17 +3,18 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 use MongoDB\Laravel\Schema\Blueprint;
+
 return new class extends Migration
 {
     protected $connection = 'mongodb';
+
     /**
      * Run the migrations.
      */
     public function up(): void
     {
-        Schema::create('stocks', function (Blueprint $collection) {
-          $collection->index('user_id');
-          $collection->index('categorie_id');
+        Schema::create('product_apis', function (Blueprint $collection) {
+            $collection->index('code');
         });
     }
 
@@ -22,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('product_apis');
     }
 };

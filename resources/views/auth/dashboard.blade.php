@@ -5,5 +5,4 @@
     <div class="container text-center mt-5">
         <h1>Hello {{ auth()->user()->name }}</h1>
     </div>
-
 @endsection
