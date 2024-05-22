@@ -87,7 +87,8 @@
                     <h1>Contact us</h1>
                 </div>
                 <div>
-                    <form class="pb-5 mt-3">
+                    <form class="pb-5 mt-3" method="POST" action="{{route('contactMail')}}">
+                        @csrf
                         <div class="mb-3">
                             <input type="text" class="form-control" id="name" name="name" required placeholder="Name">
                         </div>
