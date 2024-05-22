@@ -2,7 +2,7 @@
     @forelse($products as $stock)
         <div class="col-lg-3 mb-2">
             <div class="container">
-                <div class="card text-center">
+                <div class="card text-center bg-secondary text-white shadow">
                     <div class="card-body">
                         <h5 class="card-title">{{ $stock->product_name_fr }}</h5>
                         <div class="card-text mb-2">
@@ -11,7 +11,7 @@
                         </div>
                         <div class="row">
                             <div class="col-6">
-                                <a href="{{{ route('stock.edit', $stock) }}}" class="btn bg-secondary text-white">Update</a>
+                                <a href="{{{ route('stock.edit', $stock) }}}" class="btn bg-black text-white">Update</a>
                             </div>
                             <div class="col-6">
                                 <form class="ms-auto" action="{{ route('stock.delete', $stock) }}" method="POST">

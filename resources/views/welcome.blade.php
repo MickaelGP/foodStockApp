@@ -54,7 +54,7 @@
                         <div class="col-lg-6 order-1 order-lg-1">
                             <div class="">
                                 <div class="mt-5">
-                                    <h1>The concept</h1>
+                                    <h1>Why use our app</h1>
                                 </div>
                                 <div>
                                     <p>

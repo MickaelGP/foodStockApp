@@ -4,18 +4,15 @@
     <div class="container  text-center mt-5">
         <h1>Stock Gestion</h1>
 
-        <div class="container mt-5">
-            <h3> You have {{ auth()->user()->stocks->count() }} @if(auth()->user()->stocks->count() > 1) products @else product @endif in stocks</h3>
+        <div class="container  mt-5">
             <div class="row mt-3">
-                <div class="col-lg-6">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="query" placeholder="search" id="searchInput">
+                <div class="col">
+                    <div class="input-group  mb-3">
+                        <input type="text" class="form-control shadow" name="query" placeholder="search" id="searchInput">
+                        <button type="button" class="btn bg-black text-white shadow " data-bs-toggle="modal"
+                                data-bs-target="#addProduct">Add product
+                        </button>
                     </div>
-                </div>
-                <div class="col-lg-6">
-                    <button type="button" class="btn bg-black text-white " data-bs-toggle="modal"
-                            data-bs-target="#addProduct">Add product
-                    </button>
                 </div>
             </div>
         </div>
