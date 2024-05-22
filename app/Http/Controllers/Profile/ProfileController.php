@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Profile;
 
 use App\Http\Controllers\Controller;
+use App\Models\Stock;
 use App\Models\User;
 use App\Rules\CurrentPasswordRule;
 use Illuminate\Http\RedirectResponse;
@@ -62,5 +63,12 @@ class ProfileController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('welcome')->with('success', 'Your account has been deleted.');
+    }
+    public function statistic()
+    {
+        $productStock = Stock::query();
+
+        $products = $productStock->where('user_id', Auth::id())->get();
+         return response()->json($products);
     }
 }

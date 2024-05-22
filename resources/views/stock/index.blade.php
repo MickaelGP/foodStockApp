@@ -20,10 +20,7 @@
             </div>
         </div>
     </div>
-
-
-        <div class="row mt-5" id="searchResult"></div>
-
+    <div class="row mt-5" id="searchResult"></div>
     <div class="modal fade" id="addProduct" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -37,6 +34,7 @@
                                 <input id="barcode" type="text"
                                        class="form-control @error('barcode') is-invalid @enderror"
                                        name="barcode" required>
+                                <div id="interactive" class="viewport d-none"></div>
                                 @error('barcode')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -92,5 +90,7 @@
     </div>
 @endsection
 @push('scripts')
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
     <script src="/js/search.js"></script>
+    <script src="/js/scanBareCode.js"></script>
 @endpush

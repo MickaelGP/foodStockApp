@@ -15,7 +15,7 @@ Route::controller(HomeController::class)->prefix('/')->group(function () {
 
 Route::controller(AuthController::class)->group(function () {
     Route::post('/login', 'login')->name('login');
-    Route::get('/logout', 'logout')->name('logout');
+    Route::get('/logout', 'logout')->name('logout')->middleware('auth');
     Route::post('/register', 'register')->name('register');
 });
 
@@ -23,6 +23,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::controller(ProfileController::class)->prefix('/dashboard')->group(function () {
         Route::get('/', 'index')->name('dashboard');
+        Route::get('/stat', 'statistic')->name('stat');
         Route::get('/profile/{user}/edit', 'editProfile')->name('edit.profile');
         Route::patch('/profile/{user}/update-password', 'updatePassword')->name('update.password');
         Route::patch('/profile/{user}/update-profile', 'updateProfile')->name('update.profile');
