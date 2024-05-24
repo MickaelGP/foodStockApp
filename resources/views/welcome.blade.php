@@ -2,6 +2,7 @@
 
 @section('content')
     <section id="sectionPresentation" class="">
+        <x-alert/>
         <div class="container text-center">
             <div class="pt-5">
                 <h1>About us</h1>

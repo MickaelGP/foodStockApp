@@ -53,21 +53,6 @@
             </div>
         </nav>
     </header>
-    @if (session('success'))
-        <div class="container  alert alert-success text-center" id="alertSuccess">
-            {{ session('success') }}
-        </div>
-    @endif
-    @if ($errors->any())
-        <div class="container  alert alert-danger text-center" id="alertDanger">
-            <ul class="my-0">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
-
             @yield('content')
 
 <footer class="bg-black">

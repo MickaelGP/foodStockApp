@@ -2,6 +2,7 @@
 @section('title', " Update product | Food app stock")
 
 @section('content')
+    <x-alert/>
     <div class="container w-50 mt-5">
         <form action="{{ route('stock.update', $stock) }}" method="POST">
             @csrf

@@ -1,6 +1,7 @@
 @extends('layouts.guest')
 @section('content')
     <section class=" text-black" id="sectionRegister">
+        <x-alert/>
         <div class="container pt-5">
             <div class="container w-50">
                 <div class="text-center mt-5">

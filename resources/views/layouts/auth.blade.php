@@ -40,24 +40,7 @@
         </div>
     </nav>
 </header>
-@if (session('success'))
-    <div class="container  alert alert-success text-center w-50 mt-5" id="alertSuccess">
-        {{ session('success') }}
-    </div>
-@endif
-@if (session('error'))
-    <div class="container  alert alert-warning text-center w-50 mt-5" >
-        {{ session('error') }}
-    </div>
-@endif
-@if ($errors->any())
-    <div class="container  alert alert-danger text-center w-50 mt-5" id="alertDanger">
-            @foreach ($errors->all() as $error)
-                <p>{{ $error }}</p>
-            @endforeach
-    </div>
-@endif
-
+<x-alert/>
 @yield('content')
 @stack('scripts')
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

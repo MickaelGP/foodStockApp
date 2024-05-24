@@ -1,6 +1,7 @@
 @extends('layouts.auth')
 @section('title', 'Stock | App food Stock')
 @section('content')
+    <x-alert/>
     <div class="container  text-center mt-5">
         <h1>Stock Gestion</h1>
 

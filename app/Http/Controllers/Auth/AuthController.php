@@ -24,7 +24,7 @@ class AuthController extends Controller
                 'name' => $data['name'],
             ]);
         }
-        return redirect()->route('login');
+        return redirect()->route('login')->with('success', 'Register successfully');
     }
     public function login(Request $request)
     {
