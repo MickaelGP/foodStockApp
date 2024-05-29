@@ -8,10 +8,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Laravel\Sanctum\HasApiTokens;
 use MongoDB\Laravel\Eloquent\HybridRelations;
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, HasUlids, HybridRelations;
+    use HasFactory, Notifiable, HasUlids, HybridRelations, HasApiTokens;
 
     protected $connection = 'sqlite';
 
