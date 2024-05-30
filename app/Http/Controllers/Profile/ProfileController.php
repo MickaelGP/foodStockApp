@@ -10,6 +10,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
 use Illuminate\View\View;
@@ -35,6 +36,7 @@ class ProfileController extends Controller
      */
     public function editProfile(User $user): View
     {
+        Gate::authorize('update', $user);
         // Affiche la vue de modification du profil avec les données de l'utilisateur
         return view('auth.profile.edit', compact('user'));
     }
@@ -47,6 +49,8 @@ class ProfileController extends Controller
      */
     public function updateProfile(User $user): RedirectResponse
     {
+        Gate::authorize('update', $user);
+
         // Validation des données reçues
         $data = request()->validate([
             'name' => ['required'],
@@ -68,6 +72,8 @@ class ProfileController extends Controller
      */
     public function updatePassword(User $user): RedirectResponse
     {
+        Gate::authorize('update', $user);
+
         // Validation des données de mot de passe
         $data = request()->validate([
             'current_password' => ['required',new CurrentPasswordRule],
@@ -96,6 +102,7 @@ class ProfileController extends Controller
 
         // Récupération de l'utilisateur authentifié
         $user = $request->user();
+        Gate::authorize('delete', $user);
 
         // Déconnexion de l'utilisateur
         Auth::logout();
