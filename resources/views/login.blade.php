@@ -16,9 +16,7 @@
                         <div class="mb-3">
                             <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
                         </div>
-                        <div class="text-center pb-3">
-                            <button type="submit" class="btn bg-black shadow  text-white">Submit</button>
-                        </div>
+                       <x-boutton>Submit</x-boutton>
                     </form>
                 </div>
             </div>
