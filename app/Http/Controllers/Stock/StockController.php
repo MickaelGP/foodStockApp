@@ -3,12 +3,14 @@
 namespace App\Http\Controllers\Stock;
 
 use App\Http\Controllers\Controller;
+use App\Mail\Liste;
 use App\Models\Categorie;
 use App\Models\ProductApi;
 use App\Models\Stock;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Mail;
 use OpenFoodFacts\Laravel\Facades\OpenFoodFacts;
 
 
@@ -101,6 +103,37 @@ class StockController extends Controller
         return view('stock.search', compact('products'));
     }
 
+    /**
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function listCourse()
+    {
+        // Déclaration d'un tableau vide
+        $arr = [];
+        // Déclaration d'une variable resultat vide
+        $result = "";
+        // Récuperation de l'utilisateur connecté
+        $user = Auth::user();
+        // Initialisation de la requête de base pour le stock
+        $productStock = Stock::where('user_id', $user->id)->get();
+        // Boucle sur les resultats du stock
+        foreach ($productStock as $product) {
+            if ($product->quantite < 1){
+                // Si la quantité est inférieure à 1, on ajoute le nom du produit au tableau $products
+                array_push($arr, $product->product_name_fr);
+            }
+        }
+        // Vérification si le tableau $products n'est pas vide
+        if (count($arr) > 0) {
+            $result = "Vous allez recevoir votre liste par mail";
+            // Envoi du mail à l'utilisateur
+            Mail::to($user->email)->send(new Liste($arr,$user->name));
+        }else{
+            $result = "Aucune liste pour le moment";
+        }
+        // Retour du message dans la variable result
+        return response()->json($result);
+    }
     /**
      * Affiche le formulaire de modification pour un produit de stock
      *

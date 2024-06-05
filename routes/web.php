@@ -35,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
         Route::get('/', 'index')->name('stock.index');
         Route::post('/', 'store')->name('stock.store');
         Route::get('search', 'search')->name('stock.search');
+        Route::get('liste', 'listCourse')->name('stock.list');
         Route::get('/{stock}/edit', 'edit')->name('stock.edit');
         Route::patch('/{stock}/update', 'update')->name('stock.update');
         Route::delete('/{stock}/delete', 'destroy')->name('stock.delete');

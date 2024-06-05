@@ -1,9 +1,9 @@
 @extends('layouts.auth')
 @section('title', 'Stock | App food Stock')
 @section('content')
-    <x-alert/>
     <div class="container  text-center mt-5">
-        <h1>Stock Gestion</h1>
+
+        <h1>Stock Gestion <img src="/img/list.svg" id="list"  alt="Exporter une liste de course"/> </h1>
 
         <div class="container  mt-5">
             <div class="row mt-3">
@@ -91,4 +91,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
     <script src="/js/search.js"></script>
     <script src="/js/scanBareCode.js"></script>
+    <script src="/js/list.js"></script>
 @endpush
