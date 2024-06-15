@@ -25,49 +25,19 @@
                 <div class="modal-body">
                     <form action="{{ route('stock.store') }}" method="POST">
                         @csrf
-                        <div class="row mb-3">
-                            <label for="barcode"
-                                   class="col-md-4 col-form-label text-md-end">{{ __('Barcode') }}</label>
-                            <div class="col-md-6">
-                                <input id="barcode" type="text"
-                                       class="form-control @error('barcode') is-invalid @enderror"
-                                       name="barcode" required>
-                                <div id="interactive" class="viewport d-none"></div>
-                                @error('barcode')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="quantite"
-                                   class="col-md-4 col-form-label text-md-end">{{ __('Quantity') }}</label>
-                            <div class="col-md-6">
-                                <input id="quantite" type="number"
-                                       class="form-control @error('quantite') is-invalid @enderror"
-                                       name="quantite" required autofocus>
+                        <x-form.input  id="barcode" name="barcode" >
+                            <label for="barcode" class="form-label">{{ __('Barcode') }}</label>
+                            <div id="interactive" class="viewport d-none"></div>
+                        </x-form.input>
 
-                                @error('quantite')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <label for="dlc" class="col-md-4 col-form-label text-md-end">{{ __('DLC') }}</label>
-                            <div class="col-md-6">
-                                <input id="dlc" type="date" class="form-control @error('dlc') is-invalid @enderror"
-                                       name="dlc" required autofocus>
+                        <x-form.input  id="quantite" name="quantite" type="number">
+                            <label for="quantite" class="form-label">{{ __('Quantity') }}</label>
+                        </x-form.input>
 
-                                @error('dlc')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
-                            </div>
-                        </div>
+                        <x-form.input  id="dlc" name="dlc" type="date">
+                            <label for="dlc" class="form-label">{{ __('DLC') }}</label>
+                        </x-form.input>
+
                         <div class="mb-3">
                             <select class="form-select" name="categorie_id" aria-label="Default select example">
                                 <option selected>Open this select menu</option>
@@ -78,8 +48,7 @@
                         </div>
                         <div class="container text-center">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                            <button type="submit"
-                                    class="btn bg-black shadow text-white">{{ __('Add product') }}</button>
+                            <button type="submit" class="btn bg-black shadow text-white">{{ __('Add product') }}</button>
                         </div>
                     </form>
                 </div>

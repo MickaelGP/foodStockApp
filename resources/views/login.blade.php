@@ -10,19 +10,14 @@
                 <div>
                     <form action="{{route('login')}}" method="POST">
                         @csrf
-                        <div class="mb-3">
-                            <input type="email" class="form-control" id="email" name="email" required placeholder="Email">
-                        </div>
-                        <div class="mb-3">
-                            <input type="password" class="form-control" id="password" name="password" required placeholder="Password">
-                        </div>
-                        <div class="text-center pb-3">
-                            <button type="submit" class="btn bg-black shadow  text-white">Submit</button>
-                        </div>
+                        <x-form.input type="email" id="email" name="email" placeholder="Email "/>
+                        <x-form.input type="password" id="password" name="password" placeholder="Password"/>
+                        <x-form.button>
+                            Submit
+                        </x-form.button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
-
 @endsection
