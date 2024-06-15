@@ -2,5 +2,10 @@
 
 <div class="{{ $classDiv }}">
     {{ $slot }}
-    <input type="{{ $type }}" {{ $attributes->merge(['class' => 'form-control']) }} id="{{ $id }}" name="{{ $name }}" required placeholder="{{ $placeholder }}" value="{{ $value }}">
+    <input type="{{ $type }}" {{ $attributes->class(["form-control", 'is-invalid' => $errors->has($name)]) }} id="{{ $id }}" name="{{ $name }}" required placeholder="{{ $placeholder }}" value="{{ $value }}">
+    @error($name)
+    <div class="invalid-feedback">
+        {{ $message }}
+    </div>
+    @enderror
 </div>
